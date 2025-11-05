@@ -1,16 +1,14 @@
-#include <iostream>		// DOING
-#include <vector>		// TODO
-#include <string>		// TODO
-#include <cmath>		// TODO
-#include <chrono>		// TODO
-#include <fstream>		// TODO
+#include <iostream>
 #include "Sensor.hpp"
+#include "UserInterface.hpp"
 
+//void UserInterface();
 
 int main()
 {
-	std::cout << "Hello from CLion!" << std::endl;
-	Sensor tempSensor("TempSensor 1", "�C", 20.0f, 25.0f);
+	UserInterface ui;
+	ui.showMenu();
+	Sensor tempSensor("TempSensor 1", "°C", 20.0f, 25.0f);
 	//Sensor read();
 
 	std::cout << std::endl;
