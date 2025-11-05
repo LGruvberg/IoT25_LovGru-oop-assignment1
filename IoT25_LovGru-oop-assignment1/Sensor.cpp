@@ -1,4 +1,4 @@
-#include "Sensor.hpp"
+#include "sensor.hpp"
 #include <random>
 
 Sensor::Sensor(

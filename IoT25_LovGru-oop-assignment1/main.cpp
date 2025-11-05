@@ -1,11 +1,22 @@
+/*Rekommenderad filstruktur
+projektmapp /
+├── main.cpp
+├── sensor.h / sensor.cpp
+├── measurement.h / measurement.cpp
+├── storage.h / storage.cpp
+├── utils.h / utils.cpp(vid behov)
+└── README.md*/
+
 #include <iostream>
-#include "Sensor.hpp"
-#include "UserInterface.hpp"
-#include "utils.h"
+#include <locale>
+#include "sensor.hpp"
+#include "utils.hpp"
 
 int main()
 {
+	setupLocale();
 	UI::showMenu();
+
 	Sensor tempSensor("TempSensor 1", "°C", 20.0f, 25.0f);
 	//Sensor read();
 
