@@ -125,11 +125,17 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sensor.cpp" />
+    <ClCompile Include="storage.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Sensor.hpp" />
+    <ClInclude Include="storage.hpp" />
     <ClInclude Include="utils.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IoT25_LovGru-oop-assignment1.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,4 +5,5 @@ void setupLocale();
 
 namespace UI {
 	void showMenu();
+	//void badInput();
 }

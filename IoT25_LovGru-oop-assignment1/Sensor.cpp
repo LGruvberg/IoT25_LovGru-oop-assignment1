@@ -1,6 +1,11 @@
 #include "sensor.hpp"
 #include <random>
 
+// MoistSensor class implementation
+// TempSensor class implementation
+// AmbLightSensor class implementation
+// Communicate with sensors, read values, etc. distribute to plants
+
 Sensor::Sensor(
 	const std::string& name, 
 	const std::string& unit, 
