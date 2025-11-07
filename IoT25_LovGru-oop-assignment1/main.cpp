@@ -8,10 +8,12 @@ projektmapp /
 └── README.md*/
 
 #include <iostream>
+#include <string>
 #include <locale>
 
 #include <thread>   //  För std::this_thread::sleep_for
 #include <chrono>   //  För std::chrono::seconds
+#include <fstream>  //  File write/read
 
 #include "sensor.hpp"
 #include "utils.hpp"
@@ -22,6 +24,8 @@ void sensor();
 void clear_terminal();
 void lineBreak();
 
+void exportCSV();   // To be implemented in 'storage' file
+
 int main()
 {
 	//void clear_terminal() { std::cout << "\033[2J\033[1;1H"; } // ANSI escape codes to clear terminal }
@@ -31,6 +35,39 @@ int main()
     do {
         UI::showMenu();
         std::cin >> choice;
+
+        if (choice == 12)
+        {
+            //using namespace std;
+            // Write .csv file
+            /*
+                */
+            std::ofstream outFile("statistics.csv");
+            if (!outFile) {
+                std::cerr << "Couldn't open file " << std::endl;
+                return 1;
+            }
+            outFile << "Temperature: " << 23.5 << std::endl;
+            outFile.close();
+            std::cout << "Data was written to 'statistics.csv'" << std::endl;
+
+            // Read file
+            /*
+                ifstream inFile("statistics.csv");
+                if (!inFile) {
+                    cerr << "Kunde inte öppna filen " << endl;
+                    return 1;
+                }
+                string line;
+
+                while (getline(inFile, line)) {
+                    cout << line << endl;
+                }
+                inFile.close();
+                */
+            return 0;
+
+        }
 
         switch (choice) {
         case 1: {
@@ -59,15 +96,19 @@ int main()
             // dm.sortFunc(); break;
         case 5:
             std::cout << std::endl;
-            std::cout << "EMPTY (for now. Come back later!)" << std::endl; break;
-            // dm.saveToFileFunc(); break;
+            std::cout << "EMPTY (for now. Come back later!)" << std::endl; 
+            // dm.saveToFileFunc();
+            break;
         case 6:
             lineBreak();
             std::cout << "\n::Exiting:::\n"; lineBreak(); 
             clear_terminal(); break;
         case 9:
             std::cout << std::endl;
-            std::cout << "EMPTY (for now. Come back later!)" << std::endl; break;
+            std::cout << ".:Temperature Sensor:." << std::endl; 
+            //Sensor tempSensor("TempSensor 1", "°C", 20.0f, 25.0f);
+            //Sensor read(); 
+            break;
             // dm.bmiCalc(); break;
         default:
             std::cout << "Invalid option.\n"; break;
@@ -81,7 +122,7 @@ int main()
 
 
 	Sensor tempSensor("TempSensor 1", "°C", 20.0f, 25.0f);
-	//Sensor read();
+	Sensor read();
 
 	std::cout << std::endl;
 	std::cout
@@ -96,6 +137,37 @@ void badInput() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Invalid input, please try again...\n";
+}
+
+void exportCSV() {
+    using namespace std;
+// Write .csv file
+/*
+    ofstream outFile("statistics.csv");
+    if (!outFile) {
+        cerr << "Kunde inte öppna fil " << endl;
+        return 1;
+    }
+    outFile << "Temperature: " << 23.5 << endl;
+    outFile.close();
+    cout << "Data har skrivits till 'statistics.csv'" << endl;
+    */
+    
+// Read file
+/*
+    ifstream inFile("statistics.csv");
+    if (!inFile) {
+        cerr << "Kunde inte öppna filen " << endl;
+        return 1;
+    }
+    string line;
+
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+    return 0;
+    */
 }
 
 void sensor() {

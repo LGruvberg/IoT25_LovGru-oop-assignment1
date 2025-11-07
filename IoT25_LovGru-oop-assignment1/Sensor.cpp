@@ -1,10 +1,20 @@
 #include "sensor.hpp"
 #include <random>
 
-// MoistSensor class implementation
-// TempSensor class implementation
-// AmbLightSensor class implementation
-// Communicate with sensors, read values, etc. distribute to plants
+#include <iostream>
+
+//// TempSensor class implementation
+//void TempSensor::print() const {
+//	std::cout
+//		<< "Sensor:\t" << type_
+//		<< "\nID:\t" << sensorbase_.id_
+//		<< "\nValue:\t" << value_ << " " << sensorbase_.unit_
+//		<< "\nTime:\t" << sensorbase_.timestamp_ << "\n"
+//		;
+// }
+//// MoistSensor class implementation
+//// AmbLightSensor class implementation
+//// Communicate with sensors, read values, etc. distribute to plants
 
 Sensor::Sensor(
 	const std::string& name, 

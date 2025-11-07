@@ -13,6 +13,8 @@
 #include <windows.h> 
 #endif
 
+
+
 void setupLocale() {
 #ifdef _WIN32
 	// Set to UTF-8 for console to know how to interpret "odd" characters
@@ -40,13 +42,14 @@ void UI::showMenu() {
 		<< "\n3.\tSearch"
 		<< "\n4.\tSort"
 		<< "\n5.\tSave to.csv"
-		<< "\n6.\tEXIT"
+		<< "\n6.\t::EXIT::"
+		<< "\n9.\tTemperature Sensor"
+		<< "\n10.\tMoisture Sensor"
+		<< "\n11.\tAmbient Light Sensor"
+		<< "\n12.\tExport to .CSV"
 		<< "\nChoice:\t"
 		;
 }
-
-
-
 
 
 ///////////////////////////////////////
@@ -79,6 +82,7 @@ void UI::showMenu() {
 //}
 
 //////////////////////////////////////////////////////////
+
 //void UI::convertIntoFile() {
 //    if (data.empty()) {
 //        std::cout << "No data to write! Add values first.\n";
